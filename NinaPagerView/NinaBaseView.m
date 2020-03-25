@@ -9,7 +9,7 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 //
-// The above copyright notice and this permission notice shall be included in all
+// The above copyright notice and this permission notice shall be includtopTabed in all
 // copies or substantial portions of the Software.
 //
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -277,9 +277,9 @@
             [topTabArray addObject:customTopView];
             [button addSubview:customTopView];
         }else {
-            button.titleLabel.font = [UIFont systemFontOfSize:_titlesFont];
+            button.titleLabel.font = _titlesFont;
             if ([_titleArray[i] isKindOfClass:[NSString class]]) {
-                [bottomLineWidthArray addObject:[NSString stringWithFormat:@"%f",[_titleArray[i] sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:_titlesFont]}].width]];
+                [bottomLineWidthArray addObject:[NSString stringWithFormat:@"%f",[_titleArray[i] sizeWithAttributes:@{NSFontAttributeName:_titlesFont}].width]];
                 [button setTitle:_titleArray[i] forState:UIControlStateNormal];
                 button.titleLabel.numberOfLines = 0;
                 button.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -324,7 +324,7 @@
     //Create Toptab underline.
     if (!_topTabUnderLineHidden) {
         topTabBottomLine = [UIView new];
-        topTabBottomLine.backgroundColor = UIColorFromRGB(0xcecece);
+        topTabBottomLine.backgroundColor = _topTabUnderLineColor?_topTabUnderLineColor: UIColorFromRGB(0xcecece);
         [_topTab addSubview:topTabBottomLine];
     }
     //Create Toptab bottomline.
@@ -352,7 +352,7 @@
             maskLabel.textColor = _btnSelectColor?_btnSelectColor:[UIColor whiteColor];
             maskLabel.numberOfLines = 0;
             maskLabel.textAlignment = NSTextAlignmentCenter;
-            maskLabel.font = [UIFont systemFontOfSize:_titlesFont];
+            maskLabel.font = _titlesFont;
             [ninaMaskView addSubview:maskLabel];
         }
         [lineBottom addSubview:ninaMaskView];
@@ -402,7 +402,7 @@
             break;
     }
     if (!_topTabUnderLineHidden) {
-        topTabBottomLine.frame = CGRectMake(0, _topHeight - 1, (1 + additionCount) * FUll_VIEW_WIDTH, 1);
+        topTabBottomLine.frame = CGRectMake(0, _topHeight - (_topTabUnderLineTopHeight?_topTabUnderLineTopHeight: 1), (1 + additionCount) * FUll_VIEW_WIDTH, _topTabUnderLineTopHeight?_topTabUnderLineTopHeight: 1);
     }
 }
 

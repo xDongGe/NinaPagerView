@@ -36,9 +36,11 @@
 @property (assign, nonatomic) CGFloat bottomLinePer; /**< 下划线占比 **/
 @property (assign, nonatomic) CGFloat bottomLineHeight; /**< 下划线高度 **/
 @property (assign, nonatomic) CGFloat cornerRadiusRatio; /**< 滑块圆角 **/
-@property (assign, nonatomic) CGFloat titlesFont; /**< 标题字体大小 **/
+@property (strong, nonatomic) UIFont *titlesFont; /**< 标题字体大小 **/
 @property (assign, nonatomic) CGFloat topHeight; /**< TopTab高度 **/
 @property (assign, nonatomic) BOOL topTabUnderLineHidden; /**< 是否显示下方的下划线 **/
+@property (strong, nonatomic) UIColor *topTabUnderLineColor; /**< 下方的下划线颜色 **/
+@property (assign, nonatomic) CGFloat topTabUnderLineTopHeight; /**< 下方的下划线高度 **/
 @property (assign, nonatomic) BOOL slideEnabled; /**< 允许下方左右滑动 **/
 @property (assign, nonatomic) BOOL autoFitTitleLine; /**< 下划线是否自适应标题宽度 **/
 @property (assign, nonatomic) BOOL topTabHiddenEnable; /**< 是否允许下方滑动时候隐藏上方的toptab **/

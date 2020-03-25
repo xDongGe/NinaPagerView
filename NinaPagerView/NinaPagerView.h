@@ -134,7 +134,7 @@ typedef NS_ENUM(NSInteger, NinaPagerStyle) {
  *  上方标题的字体大小设置，默认为14。
  *  Title font in TopTab,default font is 14.
  */
-@property (assign, nonatomic) CGFloat titleFont;
+@property (strong, nonatomic) UIFont *titleFont;
 /**
  *  您可以设置titleSize这个属性来设置标题的缩放比例(相对于原比例标题)。同时，在加入了顶部自定义视图之后，您可以通过设置此属性来对选中的view整体进行缩放，推荐您设置的范围在1~1.5之间，如果不设置此属性，默认的缩放比例为1.15。(需要注意的是，此属性不适用于NinaPagerStyleSlideBlock样式)
  *  You can set titleSize for title animation(compare to origin title).Meanwhile,after adding custom topTab,you also can set the property to the topTab view which selected.Command range between 1 and 1.5.If don't set this,default scale is 1.15.(TitleScale is not working on NinaPagerStyleSlideBlock)
@@ -165,11 +165,14 @@ typedef NS_ENUM(NSInteger, NinaPagerStyle) {
  *  Hide NavigationBar or not,if you wanna set this to YES,you must hide your NavigationBar first.
  **/
 @property (assign, nonatomic) BOOL nina_navigationBarHidden;
+
 /**<
  *  是否一次性加载全部页面或控制器，默认为否。
  *  Load whole viewcontrollers or views,default is NO.
  **/
 @property (assign, nonatomic) BOOL loadWholePages;
+@property (strong, nonatomic) UIColor *topTabUnderLineColor; /**< 下方的下划线颜色 **/
+@property (assign, nonatomic) CGFloat topTabUnderLineTopHeight; /**< 下方的下划线高度 **/
 /**<
  *  上方TopTab下面的总览线是否隐藏，默认为不隐藏。
  *  Hide the topTab's underline(not the select underline) or not,default is NO.
